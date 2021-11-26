@@ -20,7 +20,7 @@ use Dompdf\Options;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/main", name="main")
+     * @Route("/", name="main")
      */
     public function index(Request $request, VoteRepository $voteRepository): Response
     {
@@ -124,7 +124,7 @@ class MainController extends AbstractController
 
         $response = new Response();
 
-        $results = $voteRepository->resultsByDay();                
+        $results = $voteRepository->resultsByDay();             
         $this->generatePDF($results);
 
         if(file_exists('pdf.pdf')) {
@@ -140,7 +140,7 @@ class MainController extends AbstractController
 
             $response->setContent(json_encode([
                 'error' => 1,
-                'message' => 'Sorry, Authentication required.',
+                'message' => 'Sorry, no file.',
             ]));
 
         }
