@@ -1,0 +1,22 @@
+body {
+    background-color: #fff;
+}
+
+@import "~bootstrap/dist/css/bootstrap";
+
+.messageOK {
+    background-color:green;
+    color:#fff;
+    font-weight:bold;
+    padding:10px;
+}
+
+.messageError {
+    background-color:red;
+    color:#fff;
+    font-weight:bold;
+    padding:10px;
+}
+
+#vote-form div { margin-bottom:10px; }
+#vote-form label { margin-right:20px; width:200px; }
